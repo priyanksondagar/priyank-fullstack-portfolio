@@ -1,45 +1,50 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Sparkles } from 'lucide-react'
+import { Sparkles } from 'lucide-react'
 
 const projects = [
   {
     featured: true,
-    title: 'AI Document Intelligence Platform',
+    title: 'CPP Platform',
     description:
-      'Built an enterprise AI platform using LangChain, OpenAI and RAG for intelligent document search, contextual responses and knowledge retrieval.',
-
-    stats: '10K+ Documents Processed',
-
-    stack: [
-      'Next.js',
-      'NestJS',
-      'OpenAI',
-      'LangChain',
-      'RAG',
-      'AWS',
-    ],
-  },
-
-  {
-    title: 'SBI Fintech Platform',
-    description:
-      'Enterprise banking workflows, customer onboarding and financial operations platform.',
+      'Enterprise insurance product management platform for SBI, ICICI, and Bajaj Finance. Handled policy lifecycle, claims processing, and real-time banking API integrations at scale.',
+    url: 'https://portal.cppwebservices.in/',
+    stats: '99.99% Uptime & 1M+ Users',
 
     stack: [
       'React',
+      'Next.js',
       'NestJS',
+      'TypeScript',
       'AWS',
-      'PostgreSQL',
+      'Github Co-pilot',
+      'MicroServices',
+      'MicroFrontend',
     ],
   },
 
   {
-    title: 'Bajaj Finance Portal',
+    title: 'Wybrid',
     description:
-      'Scalable financial services platform handling high-volume customer operations.',
+      'Workplace and property management system covering booking, asset tracking, and tenant communication modules. Integrated third-party APIs for payment and notification workflows.',
+    url: 'https://wybrid.com/',
+    stack: [
+      'React',
+      'Node JS',
+      'AWS',
+      'PostgreSQL',
+      'MongoDB',
+    ],
+  },
 
+  {
+    title: 'Therabody E-commerce Platform',
+    description:
+      `Developed and maintained backend APIs for Therabody's IoT wellness device e-commerce platform, integrating Contentful CMS to
+      manage product catalog, content delivery, and inventory workflows. Enabled seamless content sync between CMS and storefront,
+      reducing manual update effort and ensuring consistent product data across web and mobile channels`,
+    url: 'https://www.therabody.com/',
     stack: [
       'Next.js',
       'NestJS',
@@ -49,45 +54,28 @@ const projects = [
   },
 
   {
-    title: 'Enterprise ERP',
+    title: 'AI Pitch Analyzer',
     description:
-      'Business automation platform integrating multiple operational workflows.',
-
-    stack: [
-      'Node.js',
-      'React',
+      'Full-stack SaaS platform that analyzes job descriptions using RAG pipelines and LLM APIs to generate tailored cover letters and client proposals. Features JWT authentication, usage-based subscription tiers, and real-time AI streaming responses.',
+    url: 'https://github.com/priyanksondagar/ai-pitch-analyzer',
+      stack: [
+      'Next.js 14',
+      'NestJS',
+      'TypeScript',
       'PostgreSQL',
-    ],
-  },
-
-  {
-    title: 'RAG Knowledge Assistant',
-    description:
-      'Private enterprise chatbot powered by OpenAI, vector search and LangChain.',
-
-    stack: [
+      'MongoDB',
+      'Redis',
       'LangChain',
-      'OpenAI',
-      'Pinecone',
-    ],
-  },
-
-  {
-    title: 'AWS Microservices',
-    description:
-      'Event-driven architecture built using ECS, Lambda, SQS and Docker.',
-
-    stack: [
+      'OpenAI API',
       'AWS',
       'Docker',
-      'NestJS',
     ],
   },
 ]
 
 const highlights = [
   {
-    value: '20+',
+    value: '10+',
     label: 'Projects Delivered',
   },
   {
@@ -108,7 +96,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-32"
+      className="relative py-20"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -116,7 +104,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p className="text-indigo-400 uppercase tracking-[0.3em] text-sm mb-4">
             Portfolio
@@ -126,10 +114,6 @@ export default function Projects() {
             Featured Projects
           </h2>
 
-          <p className="mt-5 text-slate-400 max-w-2xl mx-auto">
-            Production-grade applications, enterprise platforms,
-            fintech systems and AI-powered solutions.
-          </p>
         </motion.div>
 
         {/* Metrics */}
@@ -243,21 +227,6 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-
-            <button
-              className="
-                mt-8
-                flex
-                items-center
-                gap-2
-                text-indigo-400
-                hover:text-indigo-300
-                transition-colors
-              "
-            >
-              View Case Study
-              <ArrowUpRight size={18} />
-            </button>
           </div>
         </motion.div>
 
@@ -291,10 +260,6 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <ArrowUpRight
-                  size={18}
-                  className="text-slate-500"
-                />
               </div>
 
               <p className="mt-4 text-slate-400 text-sm leading-relaxed">

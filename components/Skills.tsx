@@ -81,7 +81,7 @@ export default function Skills() {
     return (
         <section
             id="skills"
-            className="relative py-32"
+            className="relative py-20"
         >
             <div className="max-w-7xl mx-auto px-6">
 
@@ -99,10 +99,9 @@ export default function Skills() {
                         Technical Skills
                     </h2>
 
-                    <p className="mt-5 text-slate-400 max-w-2xl mx-auto">
+                    <p className="mt-5 text-slate-400 max-w-1xl mx-auto">
                         Building scalable enterprise platforms,
-                        AI-powered products, and cloud-native
-                        architectures for fintech and SaaS.
+                        AI-powered products, and cloud-native architectures.
                     </p>
                 </motion.div>
 

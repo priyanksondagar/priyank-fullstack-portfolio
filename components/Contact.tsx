@@ -11,6 +11,7 @@ import {
     Users,
     Rocket
 } from 'lucide-react'
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const contactInfo = [
     {
@@ -22,13 +23,13 @@ const contactInfo = [
     {
         icon: <Phone size={22} />,
         title: 'Phone',
-        value: '+91 XXXXX XXXXX',
-        href: 'tel:+91XXXXXXXXXX',
+        value: '+91 84698 93890',
+        href: 'tel:+918469893890',
     },
     {
         icon: <MapPin size={22} />,
         title: 'Location',
-        value: 'Ahmedabad, Gujarat, India',
+        value: 'Rajkot, Gujarat, India',
         href: '#',
     },
 ]
@@ -56,7 +57,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="relative py-32 overflow-hidden"
+            className="relative py-20 overflow-hidden"
         >
             {/* Background Glow */}
             <div
@@ -276,8 +277,8 @@ export default function Contact() {
             mt-12
           "
                 >
-                    {/* <a
-                        href="https://github.com/YOUR_USERNAME"
+                    <a
+                        href="https://github.com/priyanksondagar"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="
@@ -293,12 +294,12 @@ export default function Contact() {
               transition-all
             "
                     >
-                        <Github size={18} />
+                        <FaGithub size={18} />
                         GitHub
-                    </a> */}
+                    </a>
 
-                    {/* <a
-                        href="https://linkedin.com/in/YOUR_USERNAME"
+                    <a
+                        href="https://www.linkedin.com/in/priyanksondagar3"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="
@@ -314,16 +315,15 @@ export default function Contact() {
               transition-all
             "
                     >
-                        <Linkedin size={18} />
+                        <FaLinkedin size={18} className='text-blue-400' />
                         LinkedIn
-                    </a> */}
+                    </a>
                 </motion.div>
 
                 {/* Footer */}
                 <div className="mt-20 text-center">
                     <p className="text-slate-500 text-sm">
-                        © {new Date().getFullYear()} Priyank Sondagar • Built
-                        with Next.js, TypeScript & Tailwind CSS
+                        Designed & Developed by Priyank Sondagar © {new Date().getFullYear()}
                     </p>
                 </div>
             </div>

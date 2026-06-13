@@ -37,7 +37,7 @@ export default function About() {
             id="about"
             className="
       relative
-      py-32
+      py-20
       overflow-hidden
       "
         >

@@ -1,14 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
 
 const experiences = [
     {
         company: 'CPP India',
         role: 'Senior Software Engineer',
         period: 'Oct 2023 — Present',
-        location: 'Ahmedabad, India',
+        location: 'Gurugram, Haryana',
 
         achievements: [
             'Built enterprise fintech & insurance platforms serving 1M+ users',
@@ -32,13 +32,12 @@ const experiences = [
 
     {
         company: 'eDelta Enterprise Solutions',
-        role: 'Senior Software Engineer / Team Lead',
+        role: 'Software Engineer / Team Lead',
         period: 'Apr 2021 — Oct 2023',
-
+        location: 'Ahmedabad, Gujarat',
         achievements: [
             'Led team of 5 engineers',
-            'Delivered ERP, CRM and SaaS products',
-            'Reduced delivery timelines by 20%',
+            'Delivered CRM and SaaS products',
             'Received Inspire Cum Best Team Leader Award',
             'Owned architecture to deployment lifecycle',
         ],
@@ -57,9 +56,9 @@ const experiences = [
 
     {
         company: 'Proficient Technologies',
-        role: 'Web Developer',
+        role: 'Software Engineer',
         period: 'Oct 2020 — Apr 2021',
-
+        location: 'Rajkot, Gujarat',
         achievements: [
             'Built full-stack ERP modules',
             'Worked across frontend and backend',
@@ -83,7 +82,7 @@ export default function Experience() {
     return (
         <section
             id="experience"
-            className="relative py-32"
+            className="relative py-20"
         >
             <div className="max-w-7xl mx-auto px-6">
 
@@ -102,11 +101,6 @@ export default function Experience() {
                         Experience
                     </h2>
 
-                    <p className="mt-5 text-slate-400 max-w-2xl mx-auto">
-                        Building scalable fintech,
-                        SaaS and AI-powered systems
-                        across enterprise environments.
-                    </p>
                 </motion.div>
 
                 {/* Cards */}
@@ -133,9 +127,19 @@ export default function Experience() {
                                             <h3 className="text-2xl font-bold text-white">
                                                 {exp.role}
                                             </h3>
-                                            <p className="text-indigo-400 mt-1">
-                                                {exp.company}
-                                            </p>
+
+                                            <div className="mt-2 flex flex-wrap items-center gap-3">
+                                                <span className="text-indigo-400 font-medium">
+                                                    {exp.company}
+                                                </span>
+
+                                                {exp.location && (
+                                                    <div className="flex items-center gap-1 text-slate-400 text-sm">
+                                                        <MapPin size={14} />
+                                                        {exp.location}
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                         <div className="flex items-center gap-2 text-slate-400">
                                             <Calendar size={16} />
