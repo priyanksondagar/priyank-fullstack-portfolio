@@ -13,7 +13,12 @@ export default function Hero() {
             <GridBackground />
             <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-16 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                    <div className="flex flex-col items-center">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        className="flex flex-col items-center"
+                    >
                         {/* Available badge */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -25,11 +30,42 @@ export default function Hero() {
                             Available for Remote / Relocation
                         </motion.div>
 
-                        <LaptopAnimation />
+                        <motion.div
+                            initial={{
+                                opacity: 0,
+                                y: 40,
+                                scale: 0.95,
+                            }}
+                            animate={{
+                                opacity: 1,
+                                y: [0, -10, 0],
+                                scale: 1,
+                            }}
+                            transition={{
+                                opacity: { duration: 0.8, delay: 0.2 },
+                                scale: { duration: 0.8, delay: 0.2 },
+                                y: {
+                                    delay: 1.2,
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: 'easeInOut',
+                                },
+                            }}
+                        >
+                            <LaptopAnimation />
+                        </motion.div>
 
-                        <div className="hidden md:block w-full max-w-md">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.8,
+                            }}
+                            className="hidden md:block w-full max-w-md"
+                        >
                             <TechMarquee />
-                        </div>
+                        </motion.div>
 
                         {/* CTA Buttons */}
                         <motion.div
@@ -47,7 +83,7 @@ export default function Hero() {
                             </a>
 
                             <a
-                                href="/Priyank_Sondagar_CV.pdf"
+                                href="/Priyank_Sondagar_FullStack_CV.pdf"
                                 download
                                 className="flex items-center gap-2 px-6 py-3 rounded-xl border border-[#1e1e2e] hover:border-indigo-500/50 text-slate-300 hover:text-white font-medium text-sm transition-all duration-300 hover:bg-indigo-500/5"
                             >
@@ -56,7 +92,7 @@ export default function Hero() {
                             </a>
                         </motion.div>
 
-                    </div>
+                    </motion.div>
 
                     {/* RIGHT SIDE — Terminal */}
                     <div className="flex justify-center lg:justify-end">
@@ -65,6 +101,6 @@ export default function Hero() {
 
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

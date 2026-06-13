@@ -203,7 +203,7 @@ export default function Contact() {
                             </a>
 
                             <a
-                                href="/Priyank_Sondagar_CV.pdf"
+                                href="Priyank_Sondagar_FullStack_CV.pdf"
                                 download
                                 className="
                   rounded-xl
@@ -217,7 +217,7 @@ export default function Contact() {
                   hover:border-indigo-500/30
                 "
                             >
-                                Download Resume
+                                Download CV
                             </a>
                         </div>
                     </div>

@@ -21,16 +21,30 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleMobileNav = (href: string) => {
+    setMenuOpen(false)
+
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 250)
+  }
+
   return (
     <motion.nav
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-[#1e1e2e] shadow-lg shadow-black/20'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? 'bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-[#1e1e2e] shadow-lg shadow-black/20'
+        : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -98,14 +112,19 @@ export default function Navbar() {
             className="md:hidden bg-[#111118] border-t border-[#1e1e2e] px-6 pb-6 flex flex-col gap-4 pt-4"
           >
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className="text-slate-400 hover:text-white text-sm transition-colors"
+                onClick={() => handleMobileNav(link.href)}
+                className="
+      text-left
+      text-slate-400
+      hover:text-white
+      text-sm
+      transition-colors
+    "
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <a
               href="mailto:priyanksondagar3@gmail.com"
